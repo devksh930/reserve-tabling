@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.domain;
+package me.devksh930.tabling.app.account.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,15 +9,19 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import me.devksh930.tabling.app.common.entity.BaseTimeEntity;
 
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Account {
+public class Account extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true, nullable = false)
+    private AccountId accountId;
 
     private String email;
 
@@ -30,9 +34,6 @@ public class Account {
     private boolean emailVerified;
 
     private boolean phoneVerified;
-
-    @Column(unique = true, nullable = false)
-    private AccountId accountId;
 
     @Builder
     public Account(

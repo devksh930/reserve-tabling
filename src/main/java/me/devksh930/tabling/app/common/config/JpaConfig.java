@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.config;
+package me.devksh930.tabling.app.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

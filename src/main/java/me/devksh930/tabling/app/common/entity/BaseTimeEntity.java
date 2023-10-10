@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.domain;
+package me.devksh930.tabling.app.common.entity;
 
 import jakarta.persistence.MappedSuperclass;
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.domain;
+package me.devksh930.tabling.app.account.domain;
 
 import jakarta.persistence.Embeddable;
 import java.io.Serializable;
@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class AccountId implements Serializable {
 
-    private String uuid;
+    private String accountId;
 
-    private AccountId(final String uuid) {
-        this.uuid = uuid;
+    private AccountId(final String accountId) {
+        this.accountId = accountId;
     }
 
     public static AccountId of(final String uuid) {

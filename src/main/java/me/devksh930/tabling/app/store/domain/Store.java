@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.domain;
+package me.devksh930.tabling.app.store.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +9,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import me.devksh930.tabling.app.common.entity.BaseTimeEntity;
 
 @Entity
 @Getter

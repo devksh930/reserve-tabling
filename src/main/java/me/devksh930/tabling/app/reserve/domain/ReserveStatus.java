@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.domain;
+package me.devksh930.tabling.app.reserve.domain;
 
 public enum ReserveStatus {
     RESERVE,
