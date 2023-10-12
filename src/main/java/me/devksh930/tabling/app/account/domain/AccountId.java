@@ -1,8 +1,9 @@
 package me.devksh930.tabling.app.account.domain;
 
+import com.fasterxml.uuid.Generators;
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import java.io.Serializable;
-import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,17 +13,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class AccountId implements Serializable {
 
-    private String accountId;
+    @Column(name = "account_id")
+    private String value;
 
-    private AccountId(final String accountId) {
-        this.accountId = accountId;
-    }
-
-    public static AccountId of(final String uuid) {
-        return new AccountId(uuid);
+    private AccountId(String uuid) {
+        this.value = uuid;
     }
 
     public static AccountId create() {
-        return new AccountId(UUID.randomUUID().toString());
+        return new AccountId(
+            Generators
+                .timeBasedEpochGenerator()
+                .generate()
+                .toString()
+        );
+    }
+
+    public static AccountId of(String uuid) {
+        return new AccountId(uuid);
     }
 }

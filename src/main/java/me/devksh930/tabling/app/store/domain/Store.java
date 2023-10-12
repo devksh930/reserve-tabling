@@ -24,7 +24,7 @@ public class Store extends BaseTimeEntity {
 
     private String description;
 
-    private LocalDateTime startDate;
+    private LocalDateTime openDate;
 
     private LocalDateTime endDate;
 
@@ -33,13 +33,13 @@ public class Store extends BaseTimeEntity {
         final Long id,
         final String name,
         final String description,
-        final LocalDateTime startDate,
+        final LocalDateTime openDate,
         final LocalDateTime endDate
     ) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.startDate = startDate;
+        this.openDate = openDate;
         this.endDate = endDate;
     }
 }
