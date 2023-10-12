@@ -10,9 +10,11 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class AccountMapper {
 
-    private final PasswordEncoder passwordEncoder;
 
-    public Account requestToEntity(AccountSignUpRequest request) {
+    public Account requestToEntity(
+        final AccountSignUpRequest request,
+        final PasswordEncoder passwordEncoder
+    ) {
         return Account.builder()
             .email(request.getEmail())
             .password(passwordEncoder.encode(request.getPassword()))
