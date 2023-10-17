@@ -1,14 +1,18 @@
 package me.devksh930.tabling.app.account.domain;
 
-import lombok.RequiredArgsConstructor;
 import me.devksh930.tabling.app.account.repository.AccountRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class AccountValidator {
 
     private final AccountRepository accountRepository;
+
+    public AccountValidator(
+        final AccountRepository accountRepository
+    ) {
+        this.accountRepository = accountRepository;
+    }
 
     public void validate(final Account account) {
         if (accountRepository.existsByEmail(account.getEmail())) {
