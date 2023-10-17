@@ -1,11 +1,7 @@
 package me.devksh930.tabling.app.store.domain;
 
 import java.time.LocalDateTime;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
 
-@Getter
-@EqualsAndHashCode
 public class TimeRange {
 
     private LocalDateTime startDateTime;
@@ -25,5 +21,13 @@ public class TimeRange {
     ) {
         return startDateTime.isAfter(time) &&
             endDateTime.isBefore(time);
+    }
+
+    public LocalDateTime getStartDateTime() {
+        return this.startDateTime;
+    }
+
+    public LocalDateTime getEndDateTime() {
+        return this.endDateTime;
     }
 }

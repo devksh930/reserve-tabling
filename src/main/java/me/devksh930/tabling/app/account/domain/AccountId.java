@@ -4,13 +4,8 @@ import com.fasterxml.uuid.Generators;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import java.io.Serializable;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
-@Getter
 @Embeddable
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class AccountId implements Serializable {
 
     @Column(name = "account_id")
@@ -18,6 +13,9 @@ public class AccountId implements Serializable {
 
     private AccountId(String uuid) {
         this.value = uuid;
+    }
+
+    protected AccountId() {
     }
 
     public static AccountId create() {
@@ -31,5 +29,9 @@ public class AccountId implements Serializable {
 
     public static AccountId of(String uuid) {
         return new AccountId(uuid);
+    }
+
+    public String getValue() {
+        return this.value;
     }
 }

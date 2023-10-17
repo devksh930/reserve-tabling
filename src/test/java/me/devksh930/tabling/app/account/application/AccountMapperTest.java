@@ -27,7 +27,7 @@ class AccountMapperTest {
 
         final Account account = accountMapper.requestToEntity(request);
 
-        assertThat(account.getId().getValue()).isNotEmpty();
+        assertThat(account.getAccountId().getValue()).isNotEmpty();
         assertThat(account.getEmail()).isNotEmpty();
         assertThat(account.getName()).isNotEmpty();
         assertThat(account.getPassword()).isNotEmpty();

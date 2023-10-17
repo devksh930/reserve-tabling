@@ -17,11 +17,13 @@ public class AccountMapper {
     public Account requestToEntity(
         final AccountSignUpRequest request
     ) {
-        return Account.builder()
-            .email(request.email())
-            .password(passwordEncoder.encode(request.password()))
-            .phone(request.phone())
-            .name(request.name())
-            .build();
+        return new Account(
+            request.email(),
+            request.name(),
+            passwordEncoder.encode(request.password()),
+            request.phone(),
+            false,
+            false
+        );
     }
 }
