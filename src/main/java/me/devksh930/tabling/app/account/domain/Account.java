@@ -1,6 +1,5 @@
 package me.devksh930.tabling.app.account.domain;
 
-import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -10,8 +9,6 @@ import me.devksh930.tabling.app.common.entity.BaseTimeEntity;
 public class Account extends BaseTimeEntity {
 
     @Embedded
-    @AttributeOverride(name = "value",
-        column = @Column(name = "id"))
     private AccountId accountId;
 
     @Column(unique = true)

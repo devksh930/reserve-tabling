@@ -1,6 +1,5 @@
 package me.devksh930.tabling.app.account.domain;
 
-import me.devksh930.tabling.app.account.repository.AccountRepository;
 import org.springframework.stereotype.Component;
 
 @Component
