@@ -3,6 +3,7 @@ package me.devksh930.tabling.app.account.domain;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import me.devksh930.tabling.app.common.domain.AccountId;
 import me.devksh930.tabling.app.common.entity.BaseTimeEntity;
 
 @Entity

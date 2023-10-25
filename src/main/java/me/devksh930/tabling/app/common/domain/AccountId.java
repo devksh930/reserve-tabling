@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.account.domain;
+package me.devksh930.tabling.app.common.domain;
 
 import com.fasterxml.uuid.Generators;
 import jakarta.persistence.Column;
@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Embeddable
 public class AccountId implements Serializable {
 
-    @Column(name = "account_id")
+    @Column(name = "account_uuid")
     private String value;
 
     private AccountId(String uuid) {
