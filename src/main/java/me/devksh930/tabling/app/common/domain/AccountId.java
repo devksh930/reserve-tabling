@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.account.domain;
+package me.devksh930.tabling.app.common.domain;
 
 import com.fasterxml.uuid.Generators;
 import jakarta.persistence.Column;

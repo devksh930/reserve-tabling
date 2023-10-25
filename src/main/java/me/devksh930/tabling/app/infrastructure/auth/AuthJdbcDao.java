@@ -1,7 +1,7 @@
 package me.devksh930.tabling.app.infrastructure.auth;
 
 import java.util.Optional;
-import me.devksh930.tabling.app.account.domain.AccountId;
+import me.devksh930.tabling.app.common.domain.AccountId;
 import me.devksh930.tabling.app.auth.domain.AuthAccount;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
