@@ -22,17 +22,25 @@ repositories {
 }
 
 dependencies {
+    //DB
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    //WEB
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
-    runtimeOnly 'com.mysql:mysql-connector-j'
+    //AUTH
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
     implementation 'com.fasterxml.uuid:java-uuid-generator:4.2.0'
 
+    //TEST
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
     testImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter:0.6.8")
 
 }

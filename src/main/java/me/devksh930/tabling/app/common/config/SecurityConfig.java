@@ -26,6 +26,7 @@ public class SecurityConfig {
                 request.dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                     .requestMatchers(HttpMethod.POST, "/accounts").permitAll()
                     .requestMatchers(HttpMethod.GET, "/accounts").authenticated()
+                    .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                     .anyRequest()
                     .authenticated()
             )

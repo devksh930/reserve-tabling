@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.account.persistence;
+package me.devksh930.tabling.app.infrastructure.account;
 
 import me.devksh930.tabling.app.account.domain.Account;
 import me.devksh930.tabling.app.account.domain.AccountId;

@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Embeddable
 public class AccountId implements Serializable {
 
-    @Column(name = "account_id")
+    @Column(name = "account_uuid")
     private String value;
 
     private AccountId(String uuid) {
