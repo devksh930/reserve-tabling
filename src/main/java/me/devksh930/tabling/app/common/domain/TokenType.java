@@ -1,4 +1,4 @@
-package me.devksh930.tabling.app.auth.domain;
+package me.devksh930.tabling.app.common.domain;
 
 public enum TokenType {
     ACCESS,

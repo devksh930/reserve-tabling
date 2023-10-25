@@ -1,8 +1,9 @@
-package me.devksh930.tabling.app.auth.domain;
+package me.devksh930.tabling.app.common.domain;
 
-import static me.devksh930.tabling.app.auth.domain.JwtTokenProvider.AUTHORITIES_KEY;
-import static me.devksh930.tabling.app.auth.domain.JwtTokenProvider.AUTHORITY_DELIMITER;
-import static me.devksh930.tabling.app.auth.domain.JwtTokenProvider.TOKEN_TYPE_KEY;
+
+import static me.devksh930.tabling.app.common.config.SecurityConstant.AUTHORITIES_KEY;
+import static me.devksh930.tabling.app.common.config.SecurityConstant.AUTHORITY_DELIMITER;
+import static me.devksh930.tabling.app.common.config.SecurityConstant.TOKEN_TYPE_KEY;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;

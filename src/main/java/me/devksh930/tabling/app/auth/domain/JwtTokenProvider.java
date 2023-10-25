@@ -1,5 +1,9 @@
 package me.devksh930.tabling.app.auth.domain;
 
+import static me.devksh930.tabling.app.common.config.SecurityConstant.AUTHORITIES_KEY;
+import static me.devksh930.tabling.app.common.config.SecurityConstant.AUTHORITY_DELIMITER;
+import static me.devksh930.tabling.app.common.config.SecurityConstant.TOKEN_TYPE_KEY;
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -7,6 +11,7 @@ import java.security.Key;
 import java.util.Collection;
 import java.util.Date;
 import java.util.stream.Collectors;
+import me.devksh930.tabling.app.common.domain.TokenType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,9 +20,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtTokenProvider {
 
-    public static final String AUTHORITIES_KEY = "auth";
-    public static final String AUTHORITY_DELIMITER = ",";
-    public static final String TOKEN_TYPE_KEY = "typ";
     private final long accessTokenValidityInMilliseconds;
     private final long refreshTokenValidityInMilliseconds;
     private final Key secretKey;
