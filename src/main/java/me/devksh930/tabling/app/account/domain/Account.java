@@ -1,9 +1,13 @@
 package me.devksh930.tabling.app.account.domain;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import java.util.Set;
+import me.devksh930.tabling.app.common.config.RolesConverter;
 import me.devksh930.tabling.app.common.domain.AccountId;
+import me.devksh930.tabling.app.common.domain.Role;
 import me.devksh930.tabling.app.common.entity.BaseTimeEntity;
 
 @Entity
@@ -22,6 +26,10 @@ public class Account extends BaseTimeEntity {
     @Column(unique = true)
     private String phone;
 
+    @Column(name = "roles")
+    @Convert(converter = RolesConverter.class)
+    private Set<Role> roles;
+
     private boolean emailVerified;
 
     private boolean phoneVerified;
@@ -31,9 +39,11 @@ public class Account extends BaseTimeEntity {
         final String name,
         final String password,
         final String phone,
+        final Set<Role> roles,
         final boolean emailVerified,
         final boolean phoneVerified
     ) {
+        this.roles = roles;
         this.accountId = AccountId.create();
         this.email = email;
         this.name = name;
@@ -72,5 +82,10 @@ public class Account extends BaseTimeEntity {
 
     public boolean isPhoneVerified() {
         return phoneVerified;
+    }
+
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 }

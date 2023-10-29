@@ -1,5 +1,6 @@
 package me.devksh930.tabling.app.auth.application;
 
+import java.util.List;
 import me.devksh930.tabling.app.auth.domain.AuthAccount;
 import me.devksh930.tabling.app.auth.domain.AuthRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -29,10 +30,12 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     public UserDetails toUserDetails(final AuthAccount authAccount) {
+        List<SimpleGrantedAuthority> list = authAccount.roles().stream()
+            .map(s -> new SimpleGrantedAuthority("ROLE_" + s)).toList();
         return User.builder()
             .username(authAccount.accountId().getValue())
             .password(authAccount.password())
-            .authorities(new SimpleGrantedAuthority("ROLE_USER"))
+            .authorities(list)
             .build();
     }
 

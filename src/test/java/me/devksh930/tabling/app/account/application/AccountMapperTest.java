@@ -5,6 +5,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import me.devksh930.tabling.app.account.domain.Account;
 import me.devksh930.tabling.app.account.dto.request.AccountSignUpRequest;
+import me.devksh930.tabling.app.common.domain.Role;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -30,6 +31,7 @@ class AccountMapperTest {
         assertThat(account.getAccountId().getValue()).isNotEmpty();
         assertThat(account.getEmail()).isNotEmpty();
         assertThat(account.getName()).isNotEmpty();
+        assertThat(account.getRoles().contains(Role.USER));
         assertThat(account.getPassword()).isNotEmpty();
         assertThat(account.getPhone()).isNotEmpty();
     }

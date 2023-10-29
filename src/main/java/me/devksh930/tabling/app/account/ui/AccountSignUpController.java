@@ -4,7 +4,10 @@ import jakarta.validation.Valid;
 import java.net.URI;
 import me.devksh930.tabling.app.account.application.AccountSignUpService;
 import me.devksh930.tabling.app.account.dto.request.AccountSignUpRequest;
+import me.devksh930.tabling.app.common.config.annotation.CurrentAccount;
+import me.devksh930.tabling.app.common.domain.AccountId;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +29,11 @@ public class AccountSignUpController {
     public ResponseEntity<Void> signUp(@Valid @RequestBody final AccountSignUpRequest request) {
         accountSignUpService.signUp(request);
         return ResponseEntity.created(URI.create("/accounts/me")).build();
+    }
+
+    @GetMapping
+    public ResponseEntity<AccountId> signUP(@CurrentAccount AccountId accountId) {
+        return ResponseEntity.ok(accountId);
     }
 
 }
